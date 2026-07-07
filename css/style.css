@@ -1,0 +1,300 @@
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#ffffff;
+    color:#111;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:30px 60px;
+
+    z-index:999;
+
+}
+
+.logo a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:24px;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+}
+
+nav{
+
+    display:flex;
+
+    gap:40px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    opacity:.6;
+
+}
+
+.menu-right{
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.menu-right a{
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:13px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+
+}
+
+.menu-right a:hover{
+
+    opacity:.6;
+
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.hero{
+
+    width:100%;
+
+    height:100vh;
+
+    background-image:url("../images/hero.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.overlay{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    color:white;
+
+}
+
+.overlay h1{
+
+    font-size:110px;
+
+    font-weight:300;
+
+    letter-spacing:18px;
+
+}
+
+.overlay p{
+
+    margin-top:20px;
+
+    font-size:16px;
+
+    letter-spacing:4px;
+
+}
+
+.shop-btn{
+
+    margin-top:40px;
+
+    padding:16px 40px;
+
+    border:1px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.shop-btn:hover{
+
+    background:white;
+
+    color:black;
+
+}
+
+/* ===========================
+   SHOP PAGE
+=========================== */
+
+.shop-page{
+
+    padding:170px 80px 100px;
+
+}
+
+.shop-page h1{
+
+    text-align:center;
+
+    font-size:46px;
+
+    margin-bottom:50px;
+
+    letter-spacing:4px;
+
+}
+
+.category{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin-bottom:70px;
+
+}
+
+.category a{
+
+    color:#111;
+
+    text-decoration:none;
+
+    letter-spacing:2px;
+
+    font-size:13px;
+
+    transition:.3s;
+
+}
+
+.category a:hover{
+
+    opacity:.5;
+
+}
+
+/* ===========================
+   PRODUCT GRID
+=========================== */
+
+.product-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:40px;
+
+}
+
+.product img{
+
+    width:100%;
+
+    display:block;
+
+    transition:.4s;
+
+}
+
+.product img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.product h3{
+
+    margin-top:18px;
+
+    font-size:16px;
+
+    font-weight:500;
+
+}
+
+.product p{
+
+    margin-top:8px;
+
+    color:#777;
+
+    font-size:14px;
+
+}
