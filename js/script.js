@@ -185,7 +185,7 @@ function showCartSuccessBar(productName, selectedSize) {
 
   if (goBagButton) {
     goBagButton.addEventListener("click", () => {
-      window.location.assign("/cart.html#bag");
+      window.location.href = "cart.html";
     });
   }
 
@@ -602,4 +602,21 @@ if (newsletterButton && newsletterEmail) {
     alert("뉴스레터 구독이 완료된 것처럼 처리되었습니다. 현재는 데모 버전입니다.");
     newsletterEmail.value = "";
   });
-}
+}/* FINAL BAG LINK FIX */
+
+document.addEventListener(
+  "click",
+  function (event) {
+    const clickedBag = event.target.closest(
+      '.cart-action, a[href="cart.html"], a[href="cart.html#bag"], .floating-cart, .cart-success-link'
+    );
+
+    if (!clickedBag) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    window.location.href = "cart.html";
+  },
+  true
+);

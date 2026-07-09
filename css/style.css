@@ -4349,4 +4349,65 @@ body {
   white-space: nowrap !important;
   position: relative !important;
   z-index: 5001 !important;
+}/* =========================================================
+   FIX BAG CLICK OVERLAP
+========================================================= */
+
+.sodo-top-header {
+  position: fixed !important;
+  z-index: 3000 !important;
+}
+
+.header-actions {
+  position: relative !important;
+  z-index: 3100 !important;
+  pointer-events: auto !important;
+}
+
+.header-actions .cart-action {
+  position: relative !important;
+  z-index: 3101 !important;
+  pointer-events: auto !important;
+}
+
+.sodo-top-header .nav {
+  z-index: 3050 !important;
+}
+
+.compact-drawer {
+  position: fixed !important;
+  left: -280px !important;
+  top: 0 !important;
+  height: 100vh !important;
+  width: 250px !important;
+  max-width: 80vw !important;
+  display: block !important;
+}
+
+.compact-drawer.open {
+  left: 0 !important;
+}
+
+.drawer-main-links,
+.drawer-sub-links {
+  position: relative !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.drawer-sub-links {
+  margin-top: 42px !important;
+}
+
+.drawer-main-links a,
+.drawer-sub-links a {
+  position: relative !important;
+  z-index: 2 !important;
+  pointer-events: auto !important;
+}
+
+.drawer-sub-links a[href="cart.html"] {
+  position: relative !important;
+  z-index: 10 !important;
 }
