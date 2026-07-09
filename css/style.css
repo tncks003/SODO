@@ -72,4 +72,20 @@
   .shop-category-tabs button {
     flex-shrink: 0;
   }
+}/* HOME HERO IMAGE POSITION */
+
+.hero {
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center 42%;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    background-position: center center;
+  }
 }
