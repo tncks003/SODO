@@ -2951,4 +2951,38 @@ body.menu-open {
     padding: 18px 0;
     font-size: 12px;
   }
+}/* FIX MENU CLICK LAYER */
+
+.site-header,
+.sodo-top-header {
+  z-index: 1200 !important;
+}
+
+.menu-backdrop {
+  z-index: 1000 !important;
+  pointer-events: none;
+}
+
+.menu-backdrop.show {
+  pointer-events: auto;
+}
+
+.sodo-top-header .nav {
+  z-index: 1300 !important;
+  background: #f4f1ec !important;
+  color: #111 !important;
+}
+
+.sodo-top-header .nav.open {
+  left: 0 !important;
+}
+
+.sodo-top-header .nav a {
+  position: relative;
+  z-index: 1310 !important;
+  pointer-events: auto !important;
+}
+
+.sodo-top-header .menu-toggle {
+  z-index: 1400 !important;
 }
