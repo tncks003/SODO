@@ -2,6 +2,9 @@ const shopProductGrid = document.getElementById("shopProductGrid");
 const productSearch = document.getElementById("productSearch");
 const productSort = document.getElementById("productSort");
 const productCount = document.getElementById("productCount");
+const categoryButtons = document.querySelectorAll(".shop-category-tabs button");
+
+let selectedCategory = "ALL";
 
 function getProductPriceNumber(priceText) {
   return Number(String(priceText).replace(/[^\d]/g, ""));
@@ -14,10 +17,15 @@ function renderShopProducts() {
   const sortValue = productSort ? productSort.value : "default";
 
   let filteredProducts = products.filter((product) => {
-    return (
+    const matchesCategory =
+      selectedCategory === "ALL" || product.type === selectedCategory;
+
+    const matchesKeyword =
       product.name.toLowerCase().includes(keyword) ||
-      product.category.toLowerCase().includes(keyword)
-    );
+      product.category.toLowerCase().includes(keyword) ||
+      product.color.toLowerCase().includes(keyword);
+
+    return matchesCategory && matchesKeyword;
   });
 
   if (sortValue === "low") {
@@ -38,8 +46,13 @@ function renderShopProducts() {
 
   if (filteredProducts.length === 0) {
     shopProductGrid.innerHTML = `
-      <div class="no-products">
-        <p>No products found.</p>
+      <div class="coming-soon-box">
+        <p class="coming-label">${selectedCategory}</p>
+        <h2>COMING SOON</h2>
+        <p>
+          SODO is preparing new pieces for this category.
+          Please check the next drop.
+        </p>
       </div>
     `;
     return;
@@ -55,6 +68,7 @@ function renderShopProducts() {
           </div>
 
           <div class="product-info">
+            <p class="product-meta">${product.category}</p>
             <h2>${product.name}</h2>
             <p>${product.price}</p>
           </div>
@@ -63,6 +77,21 @@ function renderShopProducts() {
     })
     .join("");
 }
+
+categoryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    categoryButtons.forEach((btn) => btn.classList.remove("active"));
+    button.classList.add("active");
+
+    selectedCategory = button.dataset.category;
+
+    if (productSearch) {
+      productSearch.value = "";
+    }
+
+    renderShopProducts();
+  });
+});
 
 if (productSearch) {
   productSearch.addEventListener("input", renderShopProducts);
