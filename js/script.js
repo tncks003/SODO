@@ -16,6 +16,7 @@ function getCart() {
 
 function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  updateCartCount();
 }
 
 function priceToNumber(priceText) {
@@ -25,6 +26,28 @@ function priceToNumber(priceText) {
 function formatPrice(number) {
   return "₩" + number.toLocaleString("ko-KR");
 }
+
+/* CART COUNT */
+
+function updateCartCount() {
+  const cartLink = document.querySelector('a[href="cart.html"]');
+
+  if (!cartLink) return;
+
+  const cart = getCart();
+
+  const totalQuantity = cart.reduce((sum, item) => {
+    return sum + item.quantity;
+  }, 0);
+
+  if (totalQuantity > 0) {
+    cartLink.textContent = `CART (${totalQuantity})`;
+  } else {
+    cartLink.textContent = "CART";
+  }
+}
+
+updateCartCount();
 
 /* PRODUCT DETAIL PAGE */
 
@@ -56,6 +79,7 @@ if (productId && typeof products !== "undefined") {
 
       productImage.onerror = function () {
         productImage.style.display = "none";
+
         if (productImageFallback) {
           productImageFallback.style.display = "block";
         }
@@ -143,8 +167,11 @@ function renderCart() {
 
   if (cart.length === 0) {
     cartItems.innerHTML = "";
+
     if (emptyCart) emptyCart.style.display = "block";
     if (cartSummary) cartSummary.style.display = "none";
+
+    updateCartCount();
     return;
   }
 
@@ -186,6 +213,8 @@ function renderCart() {
 
   if (cartSubtotal) cartSubtotal.textContent = formatPrice(subtotal);
   if (cartTotal) cartTotal.textContent = formatPrice(subtotal);
+
+  updateCartCount();
 }
 
 if (cartItems) {
@@ -193,6 +222,7 @@ if (cartItems) {
 
   cartItems.addEventListener("click", (event) => {
     const button = event.target.closest("button");
+
     if (!button) return;
 
     const action = button.dataset.action;
@@ -221,8 +251,6 @@ if (cartItems) {
     renderCart();
   });
 }
-
-/* CHECKOUT DEMO */
 
 /* GO TO CHECKOUT */
 
@@ -299,9 +327,9 @@ if (placeOrderButton) {
       return;
     }
 
-    alert("주문이 완료된 것처럼 처리되었습니다. 현재는 데모 버전입니다.");
-
     localStorage.removeItem(CART_KEY);
-    window.location.href = "shop.html";
+    updateCartCount();
+
+    window.location.href = "order-complete.html";
   });
 }
