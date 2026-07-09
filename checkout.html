@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - SODO</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="logo">SODO</a>
+
+    <nav class="nav">
+      <a href="shop.html">SHOP</a>
+      <a href="collection.html">COLLECTION</a>
+      <a href="about.html">ABOUT</a>
+      <a href="journal.html">JOURNAL</a>
+      <a href="login.html">LOGIN</a>
+      <a href="cart.html">CART</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="page-title">
+      <h1>CHECKOUT</h1>
+      <p>Complete your SODO order.</p>
+    </section>
+
+    <section class="checkout-layout">
+
+      <div class="checkout-form-area">
+        <div class="checkout-section">
+          <h2>CONTACT</h2>
+          <input type="email" placeholder="Email" />
+          <input type="tel" placeholder="Phone number" />
+        </div>
+
+        <div class="checkout-section">
+          <h2>SHIPPING ADDRESS</h2>
+          <input type="text" placeholder="Name" />
+          <input type="text" placeholder="Postal code" />
+          <input type="text" placeholder="Address" />
+          <input type="text" placeholder="Detailed address" />
+        </div>
+
+        <div class="checkout-section">
+          <h2>PAYMENT</h2>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" checked />
+            <span>Card Payment</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" />
+            <span>Kakao Pay</span>
+          </label>
+
+          <label class="payment-option">
+            <input type="radio" name="payment" />
+            <span>Bank Transfer</span>
+          </label>
+        </div>
+
+        <button type="button" id="placeOrderButton" class="place-order-button">
+          PLACE ORDER
+        </button>
+
+        <p class="checkout-demo-text">
+          현재 페이지는 데모 버전입니다. 실제 결제는 진행되지 않습니다.
+        </p>
+      </div>
+
+      <aside class="checkout-summary">
+        <h2>ORDER ITEMS</h2>
+        <div id="checkoutItems" class="checkout-items"></div>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="checkoutSubtotal">₩0</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Shipping</span>
+          <strong>Free</strong>
+        </div>
+
+        <div class="summary-total">
+          <span>Total</span>
+          <strong id="checkoutTotal">₩0</strong>
+        </div>
+      </aside>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> SODO. All rights reserved.</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

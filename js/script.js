@@ -224,10 +224,84 @@ if (cartItems) {
 
 /* CHECKOUT DEMO */
 
+/* GO TO CHECKOUT */
+
 const checkoutButton = document.querySelector(".checkout-button");
 
 if (checkoutButton) {
   checkoutButton.addEventListener("click", () => {
-    alert("현재는 데모 사이트입니다. 실제 결제 기능은 추후 추가할 수 있습니다.");
+    const cart = getCart();
+
+    if (cart.length === 0) {
+      alert("장바구니가 비어 있습니다.");
+      return;
+    }
+
+    window.location.href = "checkout.html";
+  });
+}
+
+/* CHECKOUT PAGE */
+
+const checkoutItems = document.getElementById("checkoutItems");
+const checkoutSubtotal = document.getElementById("checkoutSubtotal");
+const checkoutTotal = document.getElementById("checkoutTotal");
+
+if (checkoutItems) {
+  const cart = getCart();
+
+  if (cart.length === 0) {
+    checkoutItems.innerHTML = `
+      <div class="checkout-empty">
+        <p>주문할 상품이 없습니다.</p>
+        <a href="shop.html">GO TO SHOP</a>
+      </div>
+    `;
+  } else {
+    checkoutItems.innerHTML = cart
+      .map((item) => {
+        return `
+          <div class="checkout-item">
+            <div class="checkout-item-image">
+              <img src="${item.image}" alt="${item.name}" />
+            </div>
+
+            <div>
+              <h3>${item.name}</h3>
+              <p>Size: ${item.size}</p>
+              <p>Qty: ${item.quantity}</p>
+              <strong>${formatPrice(item.priceNumber * item.quantity)}</strong>
+            </div>
+          </div>
+        `;
+      })
+      .join("");
+
+    const subtotal = cart.reduce((sum, item) => {
+      return sum + item.priceNumber * item.quantity;
+    }, 0);
+
+    if (checkoutSubtotal) checkoutSubtotal.textContent = formatPrice(subtotal);
+    if (checkoutTotal) checkoutTotal.textContent = formatPrice(subtotal);
+  }
+}
+
+/* PLACE ORDER DEMO */
+
+const placeOrderButton = document.getElementById("placeOrderButton");
+
+if (placeOrderButton) {
+  placeOrderButton.addEventListener("click", () => {
+    const cart = getCart();
+
+    if (cart.length === 0) {
+      alert("주문할 상품이 없습니다.");
+      return;
+    }
+
+    alert("주문이 완료된 것처럼 처리되었습니다. 현재는 데모 버전입니다.");
+
+    localStorage.removeItem(CART_KEY);
+    window.location.href = "shop.html";
   });
 }
