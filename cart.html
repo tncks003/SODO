@@ -22,18 +22,49 @@
   </header>
 
   <main class="page">
-    <section class="simple-page">
-      <p class="simple-label">SHOPPING BAG</p>
+    <section class="page-title">
       <h1>CART</h1>
-      <p>
-        장바구니 기능은 현재 준비 중입니다.
-        상품 선택, 수량 변경, 결제 기능은 다음 단계에서 추가할 수 있습니다.
-      </p>
+      <p>Your selected SODO items.</p>
+    </section>
 
-      <div class="empty-cart">
-        <p>Your cart is currently empty.</p>
-        <a href="shop.html">CONTINUE SHOPPING</a>
+    <section class="cart-layout">
+
+      <div class="cart-left">
+        <div id="emptyCart" class="empty-cart">
+          <p>Your cart is currently empty.</p>
+          <a href="shop.html">CONTINUE SHOPPING</a>
+        </div>
+
+        <div id="cartItems" class="cart-items"></div>
       </div>
+
+      <aside id="cartSummary" class="cart-summary">
+        <h2>ORDER SUMMARY</h2>
+
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <strong id="cartSubtotal">₩0</strong>
+        </div>
+
+        <div class="summary-row">
+          <span>Shipping</span>
+          <strong>Free</strong>
+        </div>
+
+        <div class="summary-total">
+          <span>Total</span>
+          <strong id="cartTotal">₩0</strong>
+        </div>
+
+        <button type="button" class="checkout-button">
+          CHECKOUT
+        </button>
+
+        <p class="checkout-note">
+          현재 결제 기능은 데모 단계입니다.
+        </p>
+      </aside>
+
     </section>
   </main>
 
