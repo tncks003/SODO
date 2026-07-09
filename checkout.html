@@ -9,97 +9,152 @@
 <body>
 
   <header class="site-header sodo-top-header">
-  <button class="menu-toggle" type="button">MENU</button>
+    <button class="menu-toggle" type="button">MENU</button>
 
-  <a href="index.html" class="logo header-center-logo">SODO</a>
+    <a href="index.html" class="logo header-center-logo">SODO</a>
 
-  <div class="header-actions">
-    <a href="shop.html">SHOP</a>
-    <a href="cart.html" class="cart-action">CART</a>
-  </div>
+    <div class="header-actions">
+      <a href="shop.html">SHOP</a>
+      <a href="cart.html" class="cart-action">CART</a>
+    </div>
 
-  <nav class="nav">
-    <a href="shop.html">SHOP</a>
-    <a href="collection.html">COLLECTION</a>
-    <a href="about.html">ABOUT</a>
-    <a href="journal.html">JOURNAL</a>
-    <a href="login.html">LOGIN</a>
-    <a href="cart.html">CART</a>
-  </nav>
-</header>
+    <nav class="nav">
+      <a href="shop.html">SHOP</a>
+      <a href="collection.html">COLLECTION</a>
+      <a href="about.html">ABOUT</a>
+      <a href="journal.html">JOURNAL</a>
+      <a href="login.html">LOGIN</a>
+      <a href="cart.html">CART</a>
+    </nav>
+  </header>
 
-  <main class="page">
-    <section class="page-title">
-      <h1>CHECKOUT</h1>
-      <p>Complete your SODO order.</p>
+  <main class="page checkout-page">
+
+    <section class="checkout-hero">
+      <p class="checkout-label">CHECKOUT</p>
+      <h1>PLACE YOUR ORDER</h1>
+      <p>
+        Enter your shipping details and review your SODO order before completion.
+      </p>
     </section>
 
     <section class="checkout-layout">
 
       <div class="checkout-form-area">
-        <div class="checkout-section">
-          <h2>CONTACT</h2>
-          <input type="email" placeholder="Email" />
-          <input type="tel" placeholder="Phone number" />
+
+        <section class="checkout-form-section">
+          <div class="checkout-section-title">
+            <p>01</p>
+            <h2>Customer information</h2>
+          </div>
+
+          <form class="checkout-form">
+
+            <label>
+              Name
+              <input type="text" placeholder="Name" />
+            </label>
+
+            <label>
+              Email
+              <input type="email" placeholder="Email address" />
+            </label>
+
+            <label>
+              Phone
+              <input type="tel" placeholder="Phone number" />
+            </label>
+
+          </form>
+        </section>
+
+        <section class="checkout-form-section">
+          <div class="checkout-section-title">
+            <p>02</p>
+            <h2>Shipping address</h2>
+          </div>
+
+          <form class="checkout-form">
+
+            <label>
+              Address
+              <input type="text" placeholder="Address" />
+            </label>
+
+            <label>
+              Detail address
+              <input type="text" placeholder="Apartment, suite, etc." />
+            </label>
+
+            <label>
+              Zip code
+              <input type="text" placeholder="Zip code" />
+            </label>
+
+            <label>
+              Delivery note
+              <textarea rows="5" placeholder="Delivery request"></textarea>
+            </label>
+
+          </form>
+        </section>
+
+        <section class="checkout-form-section">
+          <div class="checkout-section-title">
+            <p>03</p>
+            <h2>Payment</h2>
+          </div>
+
+          <div class="checkout-payment-box">
+            <p class="payment-label">DEMO PAYMENT</p>
+            <h3>Portfolio checkout page</h3>
+            <p>
+              현재 페이지는 포트폴리오용 데모 결제 페이지입니다.
+              실제 카드 결제나 계좌 결제 기능은 연결되어 있지 않습니다.
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      <aside class="checkout-summary">
+
+        <div class="checkout-summary-header">
+          <p>ORDER SUMMARY</p>
+          <h2>Your order</h2>
         </div>
 
-        <div class="checkout-section">
-          <h2>SHIPPING ADDRESS</h2>
-          <input type="text" placeholder="Name" />
-          <input type="text" placeholder="Postal code" />
-          <input type="text" placeholder="Address" />
-          <input type="text" placeholder="Detailed address" />
-        </div>
+        <div id="checkoutItems" class="checkout-items"></div>
 
-        <div class="checkout-section">
-          <h2>PAYMENT</h2>
+        <div class="checkout-total-area">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="checkoutSubtotal">₩0</strong>
+          </div>
 
-          <label class="payment-option">
-            <input type="radio" name="payment" checked />
-            <span>Card Payment</span>
-          </label>
+          <div class="summary-row">
+            <span>Shipping</span>
+            <strong>Free</strong>
+          </div>
 
-          <label class="payment-option">
-            <input type="radio" name="payment" />
-            <span>Kakao Pay</span>
-          </label>
-
-          <label class="payment-option">
-            <input type="radio" name="payment" />
-            <span>Bank Transfer</span>
-          </label>
+          <div class="summary-row total">
+            <span>Total</span>
+            <strong id="checkoutTotal">₩0</strong>
+          </div>
         </div>
 
         <button type="button" id="placeOrderButton" class="place-order-button">
           PLACE ORDER
         </button>
 
-        <p class="checkout-demo-text">
-          현재 페이지는 데모 버전입니다. 실제 결제는 진행되지 않습니다.
+        <p class="checkout-summary-note">
+          주문 완료 버튼을 누르면 데모 주문 완료 페이지로 이동합니다.
         </p>
-      </div>
 
-      <aside class="checkout-summary">
-        <h2>ORDER ITEMS</h2>
-        <div id="checkoutItems" class="checkout-items"></div>
-
-        <div class="summary-row">
-          <span>Subtotal</span>
-          <strong id="checkoutSubtotal">₩0</strong>
-        </div>
-
-        <div class="summary-row">
-          <span>Shipping</span>
-          <strong>Free</strong>
-        </div>
-
-        <div class="summary-total">
-          <span>Total</span>
-          <strong id="checkoutTotal">₩0</strong>
-        </div>
       </aside>
 
     </section>
+
   </main>
 
   <footer class="footer">
@@ -108,8 +163,8 @@
       <div class="footer-brand">
         <h2>SODO</h2>
         <p>
-          SODO is a graphic clothing label built for quiet daily life.
-          We create everyday pieces with a relaxed attitude.
+          SODO is a graphic clothing label built from raw city moods,
+          rough drawings and personal freedom.
         </p>
       </div>
 
@@ -154,6 +209,7 @@
     </div>
   </footer>
 
+  <script src="js/products.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
