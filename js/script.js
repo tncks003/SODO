@@ -176,18 +176,16 @@ function showCartSuccessBar(productName, selectedSize) {
       <p>${productName} / ${selectedSize}</p>
     </div>
 
-    <a href="cart.html#bag" class="cart-success-link">GO TO BAG</a>
+    <button type="button" class="cart-success-link">GO TO BAG</button>
   `;
 
   document.body.appendChild(successBar);
 
-  const goBagLink = successBar.querySelector(".cart-success-link");
+  const goBagButton = successBar.querySelector(".cart-success-link");
 
-  if (goBagLink) {
-    goBagLink.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      goToBag();
+  if (goBagButton) {
+    goBagButton.addEventListener("click", () => {
+      window.location.assign("/cart.html#bag");
     });
   }
 
@@ -584,21 +582,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 
-/* FORCE BAG LINK FIX */
 
-document.addEventListener(
-  "click",
-  (event) => {
-    const bagLink = event.target.closest(".cart-success-link");
-
-    if (!bagLink) return;
-
-    event.preventDefault();
-    event.stopPropagation();
-    goToBag();
-  },
-  true
-);
 
 
 /* NEWSLETTER DEMO */

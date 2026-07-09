@@ -4332,4 +4332,21 @@ body {
 
 .cart-button {
   text-transform: uppercase;
+}/* FIX GO TO BAG BUTTON */
+
+.cart-success-bar {
+  z-index: 5000 !important;
+}
+
+.cart-success-link {
+  border: 1px solid #fff !important;
+  background: transparent !important;
+  color: #fff !important;
+  padding: 10px 14px !important;
+  font-size: 11px !important;
+  letter-spacing: 0.14em !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  position: relative !important;
+  z-index: 5001 !important;
 }
