@@ -14,52 +14,30 @@
     <a href="index.html" class="logo header-center-logo">SODO</a>
 
     <div class="header-actions">
-      <a href="shop.html">SHOP</a>
       <a href="cart.html" class="cart-action">CART</a>
     </div>
 
-    <nav class="nav sodo-drawer-menu">
+    <nav class="nav sodo-drawer-menu compact-drawer">
+      <div class="drawer-main-links">
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="collection.html">COLLECTION</a>
+        <a href="journal.html">STOCKIST</a>
+        <a href="journal.html">COMMUNITY</a>
+      </div>
 
-  <div class="drawer-group">
-    <p class="drawer-title">SHOP</p>
-    <a href="shop.html">ALL</a>
-    <a href="shop.html?category=TOP">TOP</a>
-    <a href="shop.html?category=BOTTOM">BOTTOM</a>
-    <a href="shop.html?category=BAG">BAG</a>
-    <a href="shop.html?category=ACC">ACC</a>
-    <a href="shop.html?category=OBJECT">OBJECT</a>
-  </div>
-
-  <div class="drawer-group">
-    <p class="drawer-title">BRAND</p>
-    <a href="about.html">ABOUT</a>
-    <a href="collection.html">COLLECTION</a>
-    <a href="journal.html">JOURNAL</a>
-  </div>
-
-  <div class="drawer-group">
-    <p class="drawer-title">COMMUNITY</p>
-    <a href="journal.html">NOTICE</a>
-    <a href="journal.html">Q&amp;A</a>
-    <a href="journal.html">REVIEW</a>
-  </div>
-
-  <div class="drawer-group drawer-account">
-    <a href="login.html">LOGIN</a>
-    <a href="login.html">JOIN US</a>
-    <a href="login.html">ACCOUNT</a>
-    <a href="cart.html">BAG</a>
-  </div>
-
-</nav>
+      <div class="drawer-sub-links">
+        <a href="login.html">LOGIN</a>
+        <a href="login.html">JOIN US</a>
+        <a href="cart.html#bag">BAG</a>
+        <a href="login.html">ACCOUNT</a>
+      </div>
+    </nav>
   </header>
 
   <main class="photo-home">
 
     <section class="photo-hero">
-      <img src="images/hero.jpg" alt="SODO main visual" class="hero-main-image" />
-      <div class="hero-dark-overlay"></div>
-
       <div class="photo-hero-content">
         <p>DROP 01 / GRAPHIC TEE COLLECTION</p>
         <h1>SODO</h1>
@@ -90,7 +68,6 @@
       </div>
 
       <div class="photo-selected-list">
-
         <a href="product.html?id=table-sketch-tee" class="photo-selected-row">
           <span>01</span>
           <h2>Table Sketch Tee - White</h2>
@@ -108,7 +85,6 @@
           <h2>Back Drawing Tee - Washed White</h2>
           <p>₩82,000</p>
         </a>
-
       </div>
     </section>
 
@@ -119,6 +95,64 @@
     </section>
 
   </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h2>SODO</h2>
+        <p>
+          SODO is a graphic clothing label built from raw city moods,
+          rough drawings and personal freedom.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h3>SHOP</h3>
+          <a href="shop.html">All Products</a>
+          <a href="collection.html">Collection</a>
+          <a href="cart.html">Cart</a>
+        </div>
+
+        <div>
+          <h3>BRAND</h3>
+          <a href="about.html">About</a>
+          <a href="journal.html">Journal</a>
+          <a href="login.html">Account</a>
+        </div>
+
+        <div>
+          <h3>HELP</h3>
+          <a href="mailto:contact@sodo.kr">Contact</a>
+          <a href="#">Shipping</a>
+          <a href="#">Exchange / Return</a>
+        </div>
+      </div>
+
+      <div class="footer-newsletter">
+        <h3>NEWSLETTER</h3>
+        <p>
+          Receive updates about SODO drops, journal notes and new graphic archives.
+        </p>
+
+        <div class="newsletter-form">
+          <input type="email" id="newsletterEmail" placeholder="Email address" />
+          <button type="button" id="newsletterButton">JOIN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-info">
+      <p>SEOUL, KOREA</p>
+      <p>ONLINE STORE / PORTFOLIO DEMO</p>
+      <p>CONTACT@SODO.KR</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> SODO. All rights reserved.</p>
+      <p>RAW HIDEOUT / URBAN SANCTUARY / GRAPHIC ARCHIVE</p>
+    </div>
+  </footer>
 
   <script src="js/script.js"></script>
 </body>

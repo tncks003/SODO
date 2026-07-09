@@ -4197,4 +4197,86 @@ body {
   .drawer-account {
     padding-top: 22px;
   }
+}/* =========================================================
+   COMPACT DRAWER MENU
+========================================================= */
+
+.compact-drawer {
+  overflow-y: auto;
+  padding: 88px 28px 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+}
+
+.drawer-main-links,
+.drawer-sub-links {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-main-links {
+  gap: 10px;
+}
+
+.drawer-sub-links {
+  gap: 8px;
+  margin-top: 42px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(17, 17, 17, 0.18);
+}
+
+.compact-drawer .drawer-main-links a {
+  display: block;
+  width: 100%;
+  padding: 0 !important;
+  border: none !important;
+  font-size: 14px !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1.2 !important;
+  color: #111;
+}
+
+.compact-drawer .drawer-sub-links a {
+  display: block;
+  width: 100%;
+  padding: 0 !important;
+  border: none !important;
+  font-size: 11px !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.2 !important;
+  color: #888;
+}
+
+.compact-drawer .drawer-main-links a:hover,
+.compact-drawer .drawer-sub-links a:hover {
+  font-style: normal !important;
+  opacity: 0.55;
+  padding-left: 0 !important;
+}
+
+.sodo-top-header .compact-drawer {
+  width: 250px !important;
+  max-width: 80vw !important;
+}
+
+@media (max-width: 760px) {
+  .sodo-top-header .compact-drawer {
+    width: 78vw !important;
+    max-width: 78vw !important;
+    padding: 84px 22px 24px !important;
+  }
+
+  .compact-drawer .drawer-main-links {
+    gap: 10px;
+  }
+
+  .compact-drawer .drawer-main-links a {
+    font-size: 13px !important;
+  }
+
+  .compact-drawer .drawer-sub-links a {
+    font-size: 11px !important;
+  }
 }

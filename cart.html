@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cart - SODO</title>
+  <title>Journal - SODO</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -14,143 +14,115 @@
     <a href="index.html" class="logo header-center-logo">SODO</a>
 
     <div class="header-actions">
-      <a href="shop.html">SHOP</a>
       <a href="cart.html" class="cart-action">CART</a>
     </div>
 
-    <nav class="nav sodo-drawer-menu">
+    <nav class="nav sodo-drawer-menu compact-drawer">
+      <div class="drawer-main-links">
+        <a href="shop.html">SHOP</a>
+        <a href="about.html">ABOUT</a>
+        <a href="collection.html">COLLECTION</a>
+        <a href="journal.html">STOCKIST</a>
+        <a href="journal.html">COMMUNITY</a>
+      </div>
 
-  <div class="drawer-group">
-    <p class="drawer-title">SHOP</p>
-    <a href="shop.html">ALL</a>
-    <a href="shop.html?category=TOP">TOP</a>
-    <a href="shop.html?category=BOTTOM">BOTTOM</a>
-    <a href="shop.html?category=BAG">BAG</a>
-    <a href="shop.html?category=ACC">ACC</a>
-    <a href="shop.html?category=OBJECT">OBJECT</a>
-  </div>
-
-  <div class="drawer-group">
-    <p class="drawer-title">BRAND</p>
-    <a href="about.html">ABOUT</a>
-    <a href="collection.html">COLLECTION</a>
-    <a href="journal.html">JOURNAL</a>
-  </div>
-
-  <div class="drawer-group">
-    <p class="drawer-title">COMMUNITY</p>
-    <a href="journal.html">NOTICE</a>
-    <a href="journal.html">Q&amp;A</a>
-    <a href="journal.html">REVIEW</a>
-  </div>
-
-  <div class="drawer-group drawer-account">
-    <a href="login.html">LOGIN</a>
-    <a href="login.html">JOIN US</a>
-    <a href="login.html">ACCOUNT</a>
-    <a href="cart.html">BAG</a>
-  </div>
-
-</nav>
+      <div class="drawer-sub-links">
+        <a href="login.html">LOGIN</a>
+        <a href="login.html">JOIN US</a>
+        <a href="cart.html">BAG</a>
+        <a href="login.html">ACCOUNT</a>
+      </div>
+    </nav>
   </header>
 
-  <main class="page cart-page">
+  <main class="page journal-page">
 
-    <section class="cart-hero">
-      <p class="cart-label">CART</p>
-      <h1>YOUR CART</h1>
+    <section class="journal-hero">
+      <p class="journal-label">JOURNAL</p>
+      <h1>NOTES FROM SODO</h1>
       <p>
-        Review your selected SODO pieces before moving to checkout.
+        Releases, stories and quiet notes behind the SODO archive.
       </p>
     </section>
 
-    <section class="cart-layout">
-
-      <div class="cart-main-area">
-
-        <div class="cart-list-header">
-          <p>PRODUCT</p>
-          <p>DETAIL</p>
-        </div>
-
-        <div id="cartItems" class="cart-items"></div>
-
-        <div id="emptyCart" class="empty-cart">
-          <p>Your cart is currently empty.</p>
-          <a href="shop.html">GO TO SHOP</a>
-        </div>
-
+    <section class="journal-featured">
+      <div class="journal-featured-image">
+        <img src="images/hero.jpg" alt="SODO journal visual" />
       </div>
 
-      <aside id="cartSummary" class="cart-summary">
+      <div class="journal-featured-text">
+        <p class="journal-date">2026.07.09 / DROP NOTE</p>
+        <h2>SODO DROP 01 RELEASE</h2>
+        <p>
+          SODO의 첫 번째 드롭은 도시의 중심에서 조금 벗어난 공간,
+          오래된 벽과 거친 그래픽, 조용한 여름의 태도에서 출발합니다.
+          이번 컬렉션은 손그림, 타이포그래피, 스트릿 무드를 바탕으로 한
+          그래픽 티셔츠 아카이브입니다.
+        </p>
+        <a href="collection.html">VIEW COLLECTION</a>
+      </div>
+    </section>
 
-        <div class="cart-summary-header">
-          <p>ORDER SUMMARY</p>
-          <h2>Summary</h2>
+    <section class="journal-list">
+
+      <a href="about.html" class="journal-row">
+        <span>01</span>
+        <div>
+          <p>2026.07.09 / BRAND STORY</p>
+          <h2>RAW HIDEOUT</h2>
         </div>
+        <p>
+          SODO가 말하는 거칠고 자유로운 아지트의 의미.
+        </p>
+      </a>
 
-        <div class="summary-row">
-          <span>Subtotal</span>
-          <strong id="cartSubtotal">₩0</strong>
+      <a href="collection.html" class="journal-row">
+        <span>02</span>
+        <div>
+          <p>2026.07.09 / COLLECTION</p>
+          <h2>GRAPHIC TEE ARCHIVE</h2>
         </div>
+        <p>
+          그래픽 티셔츠를 하나의 기록물처럼 바라보는 방식.
+        </p>
+      </a>
 
-        <div class="summary-row">
-          <span>Shipping</span>
-          <strong>Calculated at checkout</strong>
+      <a href="shop.html" class="journal-row">
+        <span>03</span>
+        <div>
+          <p>2026.07.09 / PRODUCT</p>
+          <h2>SUMMER UNIFORM</h2>
         </div>
+        <p>
+          매일 입을 수 있는 조용한 여름 그래픽 티셔츠.
+        </p>
+      </a>
 
-        <div class="summary-row total">
-          <span>Total</span>
-          <strong id="cartTotal">₩0</strong>
+      <a href="about.html" class="journal-row">
+        <span>04</span>
+        <div>
+          <p>2026.07.09 / CONCEPT</p>
+          <h2>URBAN SANCTUARY</h2>
         </div>
-
-        <button type="button" class="checkout-button">
-          CHECKOUT
-        </button>
-
-        <div class="cart-summary-note">
-          <p>
-            Shipping fee and final payment amount will be confirmed on the checkout page.
-          </p>
-        </div>
-
-      </aside>
+        <p>
+          도시의 법칙 바깥에서 만들어지는 개인적인 문화.
+        </p>
+      </a>
 
     </section>
 
-    <section class="cart-bottom-guide">
-
-      <div class="cart-guide-item">
-        <span>01</span>
-        <h3>Shipping</h3>
-        <p>
-          결제 완료 후 2-5일 이내 출고됩니다.
-        </p>
-      </div>
-
-      <div class="cart-guide-item">
-        <span>02</span>
-        <h3>Exchange</h3>
-        <p>
-          상품 수령 후 7일 이내 교환 및 반품 신청이 가능합니다.
-        </p>
-      </div>
-
-      <div class="cart-guide-item">
-        <span>03</span>
-        <h3>Notice</h3>
-        <p>
-          현재 사이트는 포트폴리오용 데모 쇼핑몰입니다.
-        </p>
-      </div>
-
+    <section class="journal-statement">
+      <p>SODO JOURNAL</p>
+      <h2>
+        We collect unfinished moods,<br />
+        rough graphics and small stories from the street.
+      </h2>
     </section>
 
   </main>
 
   <footer class="footer">
     <div class="footer-inner">
-
       <div class="footer-brand">
         <h2>SODO</h2>
         <p>
@@ -171,36 +143,42 @@
           <h3>BRAND</h3>
           <a href="about.html">About</a>
           <a href="journal.html">Journal</a>
-          <a href="login.html">ACCOUNT</a>
+          <a href="login.html">Account</a>
         </div>
 
         <div>
-          <h3>CONTACT</h3>
-          <a href="mailto:contact@sodo.kr">contact@sodo.kr</a>
-          <a href="#">Instagram</a>
-          <a href="#">Customer Service</a>
+          <h3>HELP</h3>
+          <a href="mailto:contact@sodo.kr">Contact</a>
+          <a href="#">Shipping</a>
+          <a href="#">Exchange / Return</a>
         </div>
       </div>
 
       <div class="footer-newsletter">
         <h3>NEWSLETTER</h3>
-        <p>Receive updates from SODO.</p>
+        <p>
+          Receive updates about SODO drops, journal notes and new graphic archives.
+        </p>
 
         <div class="newsletter-form">
           <input type="email" id="newsletterEmail" placeholder="Email address" />
           <button type="button" id="newsletterButton">JOIN</button>
         </div>
       </div>
+    </div>
 
+    <div class="footer-info">
+      <p>SEOUL, KOREA</p>
+      <p>ONLINE STORE / PORTFOLIO DEMO</p>
+      <p>CONTACT@SODO.KR</p>
     </div>
 
     <div class="footer-bottom">
       <p>© <span id="year"></span> SODO. All rights reserved.</p>
-      <p>Demo website by SODO.</p>
+      <p>RAW HIDEOUT / URBAN SANCTUARY / GRAPHIC ARCHIVE</p>
     </div>
   </footer>
 
-  <script src="js/products.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
