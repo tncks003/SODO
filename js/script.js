@@ -358,4 +358,30 @@ if (menuToggle && navMenu) {
       menuToggle.textContent = "MENU";
     });
   });
+}/* RELATED PRODUCTS */
+
+const relatedProducts = document.getElementById("relatedProducts");
+
+if (relatedProducts && typeof products !== "undefined" && currentProduct) {
+  const relatedItems = products
+    .filter((item) => item.id !== currentProduct.id)
+    .slice(0, 3);
+
+  relatedProducts.innerHTML = relatedItems
+    .map((item) => {
+      return `
+        <a href="product.html?id=${item.id}" class="related-card">
+          <div class="related-image">
+            <img src="${item.image}" alt="${item.name}" />
+            <span>SODO</span>
+          </div>
+
+          <div class="related-info">
+            <h3>${item.name}</h3>
+            <p>${item.price}</p>
+          </div>
+        </a>
+      `;
+    })
+    .join("");
 }
