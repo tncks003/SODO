@@ -1435,4 +1435,31 @@ button {
   .shop-tools {
     grid-template-columns: 1fr;
   }
+}/* PRODUCT QUANTITY */
+
+.product-quantity {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  border: 1px solid #aaa;
+}
+
+.product-quantity button {
+  width: 46px;
+  height: 42px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.product-quantity button:hover {
+  background: #111;
+  color: #fff;
+}
+
+.product-quantity span {
+  width: 48px;
+  text-align: center;
+  font-size: 14px;
 }

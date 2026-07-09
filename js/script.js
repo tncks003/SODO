@@ -110,6 +110,34 @@ sizeButtons.forEach((button) => {
   });
 });
 
+/* PRODUCT QUANTITY SELECT */
+
+const quantityMinus = document.getElementById("quantityMinus");
+const quantityPlus = document.getElementById("quantityPlus");
+const productQuantity = document.getElementById("productQuantity");
+
+let selectedQuantity = 1;
+
+function updateProductQuantity() {
+  if (productQuantity) {
+    productQuantity.textContent = selectedQuantity;
+  }
+}
+
+if (quantityMinus && quantityPlus && productQuantity) {
+  quantityMinus.addEventListener("click", () => {
+    if (selectedQuantity > 1) {
+      selectedQuantity -= 1;
+      updateProductQuantity();
+    }
+  });
+
+  quantityPlus.addEventListener("click", () => {
+    selectedQuantity += 1;
+    updateProductQuantity();
+  });
+}
+
 /* ADD TO CART SUCCESS BAR */
 
 function showCartSuccessBar(productName, selectedSize) {
@@ -211,7 +239,7 @@ if (cartButton) {
     );
 
     if (existingItem) {
-      existingItem.quantity += 1;
+      existingItem.quantity += selectedQuantity;
     } else {
       cart.push({
         id: currentProduct.id,
@@ -220,12 +248,12 @@ if (cartButton) {
         priceNumber: priceToNumber(currentProduct.price),
         image: currentProduct.image,
         size: selectedSize,
-        quantity: 1
+        quantity: selectedQuantity
       });
     }
 
     saveCart(cart);
-    showCartSuccessBar(currentProduct.name, selectedSize);
+    showCartSuccessBar(`${currentProduct.name} x ${selectedQuantity}`, selectedSize);
   });
 }
 
