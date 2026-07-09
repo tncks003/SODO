@@ -3,48 +3,146 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Login - SODO</title>
+  <title>Account - SODO</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
   <header class="site-header sodo-top-header">
-  <button class="menu-toggle" type="button">MENU</button>
+    <button class="menu-toggle" type="button">MENU</button>
 
-  <a href="index.html" class="logo header-center-logo">SODO</a>
+    <a href="index.html" class="logo header-center-logo">SODO</a>
 
-  <div class="header-actions">
-    <a href="shop.html">SHOP</a>
-    <a href="cart.html" class="cart-action">CART</a>
-  </div>
+    <div class="header-actions">
+      <a href="shop.html">SHOP</a>
+      <a href="cart.html" class="cart-action">CART</a>
+    </div>
 
-  <nav class="nav">
-    <a href="shop.html">SHOP</a>
-    <a href="collection.html">COLLECTION</a>
-    <a href="about.html">ABOUT</a>
-    <a href="journal.html">JOURNAL</a>
-    <a href="login.html">LOGIN</a>
-    <a href="cart.html">CART</a>
-  </nav>
-</header>
+    <nav class="nav">
+      <a href="shop.html">SHOP</a>
+      <a href="collection.html">COLLECTION</a>
+      <a href="about.html">ABOUT</a>
+      <a href="journal.html">JOURNAL</a>
+      <a href="login.html">LOGIN</a>
+      <a href="cart.html">CART</a>
+    </nav>
+  </header>
 
-  <main class="page">
-    <section class="simple-page">
-      <p class="simple-label">ACCOUNT</p>
-      <h1>LOGIN</h1>
+  <main class="page account-page">
+
+    <section class="account-hero">
+      <p class="account-label">ACCOUNT</p>
+      <h1>SODO ACCOUNT</h1>
       <p>
-        SODO 계정 기능은 현재 준비 중입니다.
-        추후 회원가입, 주문 내역, 위시리스트 기능이 추가될 예정입니다.
+        Sign in to save your cart, check orders and receive quiet updates from SODO.
       </p>
-
-      <form class="login-box">
-        <input type="email" placeholder="Email" />
-        <input type="password" placeholder="Password" />
-        <button type="button">LOGIN</button>
-      </form>
-
-      <p class="simple-note">This page is currently a demo version.</p>
     </section>
+
+    <section class="account-layout">
+
+      <div class="account-card">
+        <div class="account-card-header">
+          <p>MEMBER LOGIN</p>
+          <h2>Sign in</h2>
+        </div>
+
+        <form class="account-form">
+          <label>
+            Email
+            <input type="email" placeholder="Email address" />
+          </label>
+
+          <label>
+            Password
+            <input type="password" placeholder="Password" />
+          </label>
+
+          <button type="button">LOGIN</button>
+        </form>
+
+        <div class="account-links">
+          <a href="#">Forgot password?</a>
+          <a href="#">Create account</a>
+        </div>
+
+        <p class="account-demo-text">
+          현재는 데모 페이지입니다. 실제 로그인 기능은 연결되어 있지 않습니다.
+        </p>
+      </div>
+
+      <div class="account-card">
+        <div class="account-card-header">
+          <p>GUEST ORDER</p>
+          <h2>Order lookup</h2>
+        </div>
+
+        <form class="account-form">
+          <label>
+            Order number
+            <input type="text" placeholder="Order number" />
+          </label>
+
+          <label>
+            Email
+            <input type="email" placeholder="Email address" />
+          </label>
+
+          <button type="button">CHECK ORDER</button>
+        </form>
+
+        <p class="account-demo-text">
+          비회원 주문조회 영역입니다. 실제 주문 조회 기능은 추후 연결할 수 있습니다.
+        </p>
+      </div>
+
+    </section>
+
+    <section class="account-note-section">
+
+      <div class="account-note-title">
+        <p>ACCOUNT NOTE</p>
+        <h2>
+          Your account is a small archive<br />
+          of orders, carts and future drops.
+        </h2>
+      </div>
+
+      <div class="account-note-list">
+
+        <div class="account-note-item">
+          <span>01</span>
+          <h3>Saved cart</h3>
+          <p>
+            관심 있는 상품을 장바구니에 담고, 나중에 다시 확인할 수 있습니다.
+          </p>
+        </div>
+
+        <div class="account-note-item">
+          <span>02</span>
+          <h3>Order history</h3>
+          <p>
+            구매한 상품과 주문 내역을 계정 안에서 확인할 수 있는 공간입니다.
+          </p>
+        </div>
+
+        <div class="account-note-item">
+          <span>03</span>
+          <h3>Drop news</h3>
+          <p>
+            SODO의 새로운 드롭, 컬렉션, 저널 소식을 가장 먼저 받을 수 있습니다.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="account-bottom-cta">
+      <p>SODO ACCOUNT</p>
+      <h2>Not a member yet?</h2>
+      <a href="shop.html">START WITH SHOP</a>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -53,8 +151,8 @@
       <div class="footer-brand">
         <h2>SODO</h2>
         <p>
-          SODO is a graphic clothing label built for quiet daily life.
-          We create everyday pieces with a relaxed attitude.
+          SODO is a graphic clothing label built from raw city moods,
+          rough drawings and personal freedom.
         </p>
       </div>
 
