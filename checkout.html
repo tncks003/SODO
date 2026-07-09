@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Journal - SODO</title>
+  <title>Checkout - SODO</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -35,88 +35,127 @@
     </nav>
   </header>
 
-  <main class="page journal-page">
+  <main class="page checkout-page">
 
-    <section class="journal-hero">
-      <p class="journal-label">JOURNAL</p>
-      <h1>NOTES FROM SODO</h1>
+    <section class="checkout-hero">
+      <p class="checkout-label">CHECKOUT</p>
+      <h1>PLACE YOUR ORDER</h1>
       <p>
-        Releases, stories and quiet notes behind the SODO archive.
+        Enter your shipping details and review your SODO order before completion.
       </p>
     </section>
 
-    <section class="journal-featured">
-      <div class="journal-featured-image">
-        <img src="images/hero.jpg" alt="SODO journal visual" />
+    <section class="checkout-layout">
+
+      <div class="checkout-form-area">
+
+        <section class="checkout-form-section">
+          <div class="checkout-section-title">
+            <p>01</p>
+            <h2>Customer information</h2>
+          </div>
+
+          <form class="checkout-form">
+            <label>
+              Name
+              <input type="text" placeholder="Name" />
+            </label>
+
+            <label>
+              Email
+              <input type="email" placeholder="Email address" />
+            </label>
+
+            <label>
+              Phone
+              <input type="tel" placeholder="Phone number" />
+            </label>
+          </form>
+        </section>
+
+        <section class="checkout-form-section">
+          <div class="checkout-section-title">
+            <p>02</p>
+            <h2>Shipping address</h2>
+          </div>
+
+          <form class="checkout-form">
+            <label>
+              Address
+              <input type="text" placeholder="Address" />
+            </label>
+
+            <label>
+              Detail address
+              <input type="text" placeholder="Apartment, suite, etc." />
+            </label>
+
+            <label>
+              Zip code
+              <input type="text" placeholder="Zip code" />
+            </label>
+
+            <label>
+              Delivery note
+              <textarea rows="5" placeholder="Delivery request"></textarea>
+            </label>
+          </form>
+        </section>
+
+        <section class="checkout-form-section">
+          <div class="checkout-section-title">
+            <p>03</p>
+            <h2>Payment</h2>
+          </div>
+
+          <div class="checkout-payment-box">
+            <p class="payment-label">DEMO PAYMENT</p>
+            <h3>Portfolio checkout page</h3>
+            <p>
+              현재 페이지는 포트폴리오용 데모 결제 페이지입니다.
+              실제 카드 결제나 계좌 결제 기능은 연결되어 있지 않습니다.
+            </p>
+          </div>
+        </section>
+
       </div>
 
-      <div class="journal-featured-text">
-        <p class="journal-date">2026.07.09 / DROP NOTE</p>
-        <h2>SODO DROP 01 RELEASE</h2>
-        <p>
-          SODO의 첫 번째 드롭은 도시의 중심에서 조금 벗어난 공간,
-          오래된 벽과 거친 그래픽, 조용한 여름의 태도에서 출발합니다.
-          이번 컬렉션은 손그림, 타이포그래피, 스트릿 무드를 바탕으로 한
-          그래픽 티셔츠 아카이브입니다.
-        </p>
-        <a href="collection.html">VIEW COLLECTION</a>
-      </div>
-    </section>
+      <aside class="checkout-summary">
 
-    <section class="journal-list">
-
-      <a href="about.html" class="journal-row">
-        <span>01</span>
-        <div>
-          <p>2026.07.09 / BRAND STORY</p>
-          <h2>RAW HIDEOUT</h2>
+        <div class="checkout-summary-header">
+          <p>ORDER SUMMARY</p>
+          <h2>Your order</h2>
         </div>
-        <p>
-          SODO가 말하는 거칠고 자유로운 아지트의 의미.
-        </p>
-      </a>
 
-      <a href="collection.html" class="journal-row">
-        <span>02</span>
-        <div>
-          <p>2026.07.09 / COLLECTION</p>
-          <h2>GRAPHIC TEE ARCHIVE</h2>
+        <div id="checkoutItems" class="checkout-items"></div>
+
+        <div class="checkout-total-area">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong id="checkoutSubtotal">₩0</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Shipping</span>
+            <strong>Free</strong>
+          </div>
+
+          <div class="summary-row total">
+            <span>Total</span>
+            <strong id="checkoutTotal">₩0</strong>
+          </div>
         </div>
-        <p>
-          그래픽 티셔츠를 하나의 기록물처럼 바라보는 방식.
+
+        <button type="button" id="placeOrderButton" class="place-order-button">
+          PLACE ORDER
+        </button>
+
+        <p class="checkout-summary-note">
+          주문 완료 버튼을 누르면 데모 주문 완료 페이지로 이동합니다.
         </p>
-      </a>
 
-      <a href="shop.html" class="journal-row">
-        <span>03</span>
-        <div>
-          <p>2026.07.09 / PRODUCT</p>
-          <h2>SUMMER UNIFORM</h2>
-        </div>
-        <p>
-          매일 입을 수 있는 조용한 여름 그래픽 티셔츠.
-        </p>
-      </a>
+      </aside>
 
-      <a href="about.html" class="journal-row">
-        <span>04</span>
-        <div>
-          <p>2026.07.09 / CONCEPT</p>
-          <h2>URBAN SANCTUARY</h2>
-        </div>
-        <p>
-          도시의 법칙 바깥에서 만들어지는 개인적인 문화.
-        </p>
-      </a>
-
-    </section>
-
-    <section class="journal-statement">
-      <p>SODO JOURNAL</p>
-      <h2>
-        We collect unfinished moods,<br />
-        rough graphics and small stories from the street.
-      </h2>
     </section>
 
   </main>
@@ -136,7 +175,7 @@
           <h3>SHOP</h3>
           <a href="shop.html">All Products</a>
           <a href="collection.html">Collection</a>
-          <a href="cart.html">Cart</a>
+          <a href="cart.html">Bag</a>
         </div>
 
         <div>
@@ -179,6 +218,7 @@
     </div>
   </footer>
 
+  <script src="js/products.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
