@@ -384,4 +384,21 @@ if (relatedProducts && typeof products !== "undefined" && currentProduct) {
       `;
     })
     .join("");
+}/* NEWSLETTER DEMO */
+
+const newsletterButton = document.getElementById("newsletterButton");
+const newsletterEmail = document.getElementById("newsletterEmail");
+
+if (newsletterButton && newsletterEmail) {
+  newsletterButton.addEventListener("click", () => {
+    const email = newsletterEmail.value.trim();
+
+    if (!email) {
+      alert("이메일을 입력해주세요.");
+      return;
+    }
+
+    alert("뉴스레터 구독이 완료된 것처럼 처리되었습니다. 현재는 데모 버전입니다.");
+    newsletterEmail.value = "";
+  });
 }
