@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SODO</title>
+  <title>Cart - SODO</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <header class="site-header transparent">
+  <header class="site-header">
     <a href="index.html" class="logo">SODO</a>
 
     <nav class="nav">
@@ -21,17 +21,25 @@
     </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-overlay"></div>
+  <main class="page">
+    <section class="simple-page">
+      <p class="simple-label">SHOPPING BAG</p>
+      <h1>CART</h1>
+      <p>
+        장바구니 기능은 현재 준비 중입니다.
+        상품 선택, 수량 변경, 결제 기능은 다음 단계에서 추가할 수 있습니다.
+      </p>
 
-      <div class="hero-content">
-        <h1>SODO</h1>
-        <p>ESSENTIALS FOR DAILY LIFE</p>
-        <a href="shop.html" class="hero-button">SHOP NOW</a>
+      <div class="empty-cart">
+        <p>Your cart is currently empty.</p>
+        <a href="shop.html">CONTINUE SHOPPING</a>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> SODO. All rights reserved.</p>
+  </footer>
 
   <script src="js/script.js"></script>
 </body>

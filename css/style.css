@@ -588,4 +588,89 @@ button {
 .size-list button.active {
   background: #111;
   color: #fff;
+}/* SIMPLE LOGIN / CART PAGE */
+
+.simple-page {
+  max-width: 520px;
+  margin: 80px auto 0;
+  text-align: center;
+}
+
+.simple-label {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #777;
+  margin-bottom: 16px;
+}
+
+.simple-page h1 {
+  font-size: 42px;
+  letter-spacing: 3px;
+  margin-bottom: 22px;
+}
+
+.simple-page > p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.login-box {
+  margin-top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.login-box input {
+  height: 48px;
+  padding: 0 14px;
+  border: 1px solid #bbb;
+  background: transparent;
+  font-size: 14px;
+}
+
+.login-box button {
+  height: 50px;
+  border: none;
+  background: #111;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  background: #333;
+}
+
+.simple-note {
+  margin-top: 22px;
+  font-size: 12px !important;
+  color: #888 !important;
+}
+
+.empty-cart {
+  margin-top: 36px;
+  padding: 44px 24px;
+  border: 1px solid #ccc;
+}
+
+.empty-cart p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.empty-cart a {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 1px solid #111;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.empty-cart a:hover {
+  background: #111;
+  color: #fff;
 }
