@@ -9,44 +9,70 @@
 <body>
 
   <header class="site-header sodo-top-header">
-  <button class="menu-toggle" type="button">MENU</button>
+    <button class="menu-toggle" type="button">MENU</button>
 
-  <a href="index.html" class="logo header-center-logo">SODO</a>
+    <a href="index.html" class="logo header-center-logo">SODO</a>
 
-  <div class="header-actions">
-    <a href="shop.html">SHOP</a>
-    <a href="cart.html" class="cart-action">CART</a>
-  </div>
+    <div class="header-actions">
+      <a href="shop.html">SHOP</a>
+      <a href="cart.html" class="cart-action">CART</a>
+    </div>
 
-  <nav class="nav">
-    <a href="shop.html">SHOP</a>
-    <a href="collection.html">COLLECTION</a>
-    <a href="about.html">ABOUT</a>
-    <a href="journal.html">JOURNAL</a>
-    <a href="login.html">LOGIN</a>
-    <a href="cart.html">CART</a>
-  </nav>
-</header>
+    <nav class="nav">
+      <a href="shop.html">SHOP</a>
+      <a href="collection.html">COLLECTION</a>
+      <a href="about.html">ABOUT</a>
+      <a href="journal.html">JOURNAL</a>
+      <a href="login.html">LOGIN</a>
+      <a href="cart.html">CART</a>
+    </nav>
+  </header>
 
-  <main class="page">
+  <main class="product-page product-detail-page">
+
+    <section class="product-top-label">
+      <a href="shop.html">SHOP</a>
+      <span>/</span>
+      <p id="productCategory">TOP / GRAPHIC TEE</p>
+    </section>
+
     <section class="product-detail">
 
-      <div class="product-detail-image">
-        <img id="productImage" src="" alt="" />
-        <span id="productImageFallback">SODO</span>
+      <div class="product-media-area">
+        <div class="product-detail-image">
+          <img id="productImage" src="" alt="SODO Product" />
+          <div id="productImageFallback">SODO</div>
+        </div>
+
+        <div class="product-image-note">
+          <span>SODO PRODUCT ARCHIVE</span>
+          <p>
+            Product images are part of the SODO visual archive.
+            Actual color may vary slightly depending on screen settings.
+          </p>
+        </div>
       </div>
 
       <div class="product-detail-info">
-        <p class="category" id="productCategory">SODO GRAPHIC TEE</p>
-        <h1 id="productName">Product Name</h1>
-        <p class="price" id="productPrice">₩0</p>
 
-        <p class="description" id="productDescription">
-          상품 설명이 들어갑니다.
+        <p class="product-detail-label">SODO ONLINE STORE</p>
+
+        <h1 id="productName">Product Name</h1>
+
+        <p id="productPrice">₩0</p>
+
+        <p id="productDescription">
+          Product description will be displayed here.
         </p>
 
-        <div class="option-box">
-          <p>SIZE</p>
+        <div class="product-option">
+          <h3>COLOR</h3>
+          <p id="productColor" class="product-option-text">Color: -</p>
+        </div>
+
+        <div class="product-option">
+          <h3>SIZE</h3>
+
           <div class="size-list">
             <button type="button">S</button>
             <button type="button">M</button>
@@ -55,8 +81,8 @@
           </div>
         </div>
 
-        <div class="option-box">
-          <p>QUANTITY</p>
+        <div class="product-option">
+          <h3>QUANTITY</h3>
 
           <div class="product-quantity">
             <button type="button" id="quantityMinus">-</button>
@@ -65,42 +91,74 @@
           </div>
         </div>
 
-        <button class="cart-button" type="button">ADD TO CART</button>
+        <button type="button" class="cart-button">
+          ADD TO CART
+        </button>
 
-        <div class="product-notice">
-          <p id="productMaterial">Material: Cotton 100%</p>
-          <p id="productColor">Color: White</p>
+        <div class="product-meta-list">
+          <p id="productMaterial">Material: -</p>
           <p id="productMade">Made in Korea</p>
         </div>
 
-        <div class="product-extra-info">
-          <div>
-            <h3>SHIPPING</h3>
-            <p>전 상품 무료배송으로 제공됩니다.</p>
-          </div>
+        <div class="product-detail-panels">
 
-          <div>
-            <h3>SIZE GUIDE</h3>
-            <p>S / M / L / XL 사이즈로 구성되어 있으며, 여유 있는 실루엣을 기준으로 제작되었습니다.</p>
-          </div>
+          <details open>
+            <summary>PRODUCT DETAILS</summary>
+            <div>
+              <p>
+                SODO의 그래픽 티셔츠는 일상에서 편하게 입을 수 있는 실루엣과
+                거친 그래픽 무드를 함께 담은 제품입니다.
+              </p>
+              <p>
+                단독으로 착용하거나 셔츠, 후디, 자켓 안에 레이어드하기 좋습니다.
+              </p>
+            </div>
+          </details>
 
-          <div>
-            <h3>NOTICE</h3>
-            <p>현재 SODO 사이트는 데모 버전이며 실제 결제와 배송은 진행되지 않습니다.</p>
-          </div>
+          <details>
+            <summary>SIZE GUIDE</summary>
+            <div>
+              <p>S / M / L / XL 사이즈로 구성됩니다.</p>
+              <p>
+                평소 입는 정사이즈를 추천하며, 여유 있는 핏을 원할 경우 한 사이즈 업을 추천합니다.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary>SHIPPING & RETURNS</summary>
+            <div>
+              <p>결제 완료 후 2-5일 이내 출고됩니다.</p>
+              <p>
+                상품 수령 후 7일 이내 교환 및 반품 신청이 가능합니다.
+                단, 착용 흔적이나 세탁 흔적이 있는 경우 교환 및 반품이 제한될 수 있습니다.
+              </p>
+            </div>
+          </details>
+
         </div>
+
       </div>
 
     </section>
 
+    <section class="product-bottom-statement">
+      <p>GRAPHIC TEE ARCHIVE</p>
+      <h2>
+        Rough graphics,<br />
+        quiet attitude.
+      </h2>
+    </section>
+
     <section class="related-section">
-      <div class="related-title">
-        <h2>RELATED ITEMS</h2>
+      <div class="related-title-row">
+        <h2>RELATED PRODUCTS</h2>
         <a href="shop.html">VIEW ALL</a>
       </div>
 
       <div id="relatedProducts" class="related-grid"></div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -109,8 +167,8 @@
       <div class="footer-brand">
         <h2>SODO</h2>
         <p>
-          SODO is a graphic clothing label built for quiet daily life.
-          We create everyday pieces with a relaxed attitude.
+          SODO is a graphic clothing label built from raw city moods,
+          rough drawings and personal freedom.
         </p>
       </div>
 
@@ -126,7 +184,7 @@
           <h3>BRAND</h3>
           <a href="about.html">About</a>
           <a href="journal.html">Journal</a>
-          <a href="login.html">Account</a>
+          <a href="login.html">ACCOUNT</a>
         </div>
 
         <div>
