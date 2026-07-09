@@ -1,3 +1,9 @@
+/* =========================================================
+   SODO SCRIPT JS
+   Cart / Bag / Product / Menu / Checkout
+========================================================= */
+
+
 /* YEAR */
 
 const year = document.getElementById("year");
@@ -6,7 +12,8 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
-/* CART STORAGE */
+
+/* CART / BAG STORAGE */
 
 const CART_KEY = "sodoCart";
 
@@ -28,12 +35,15 @@ function formatPrice(number) {
   return "₩" + number.toLocaleString("ko-KR");
 }
 
-/* CART COUNT */
+
+/* BAG COUNT */
 
 function updateCartCount() {
-  const cartLinks = document.querySelectorAll('a[href="cart.html"]');
+  const bagLinks = document.querySelectorAll(
+    '.cart-action, a[href="cart.html"], a[href="cart.html#bag"]'
+  );
 
-  if (!cartLinks.length) return;
+  if (!bagLinks.length) return;
 
   const cart = getCart();
 
@@ -41,16 +51,17 @@ function updateCartCount() {
     return sum + item.quantity;
   }, 0);
 
-  cartLinks.forEach((cartLink) => {
+  bagLinks.forEach((bagLink) => {
     if (totalQuantity > 0) {
-      cartLink.textContent = `CART (${totalQuantity})`;
+      bagLink.textContent = `BAG (${totalQuantity})`;
     } else {
-      cartLink.textContent = "CART";
+      bagLink.textContent = "BAG";
     }
   });
 }
 
 updateCartCount();
+
 
 /* PRODUCT DETAIL PAGE */
 
@@ -101,6 +112,7 @@ if (productId && typeof products !== "undefined") {
   }
 }
 
+
 /* SIZE SELECT */
 
 const sizeButtons = document.querySelectorAll(".size-list button");
@@ -111,6 +123,7 @@ sizeButtons.forEach((button) => {
     button.classList.add("active");
   });
 });
+
 
 /* PRODUCT QUANTITY SELECT */
 
@@ -140,7 +153,12 @@ if (quantityMinus && quantityPlus && productQuantity) {
   });
 }
 
-/* ADD TO CART SUCCESS BAR */
+
+/* ADD TO BAG SUCCESS BAR */
+
+function goToBag() {
+  window.location.href = "cart.html#bag";
+}
 
 function showCartSuccessBar(productName, selectedSize) {
   const existingBar = document.querySelector(".cart-success-bar");
@@ -154,14 +172,24 @@ function showCartSuccessBar(productName, selectedSize) {
 
   successBar.innerHTML = `
     <div>
-      <strong>ADDED TO CART</strong>
+      <strong>ADDED TO BAG</strong>
       <p>${productName} / ${selectedSize}</p>
     </div>
 
-    <a href="cart.html">VIEW CART</a>
+    <a href="cart.html#bag" class="cart-success-link">GO TO BAG</a>
   `;
 
   document.body.appendChild(successBar);
+
+  const goBagLink = successBar.querySelector(".cart-success-link");
+
+  if (goBagLink) {
+    goBagLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      goToBag();
+    });
+  }
 
   setTimeout(() => {
     successBar.classList.add("show");
@@ -176,7 +204,8 @@ function showCartSuccessBar(productName, selectedSize) {
   }, 4500);
 }
 
-/* MOBILE FLOATING CART */
+
+/* MOBILE FLOATING BAG */
 
 function createFloatingCart() {
   const existingFloatingCart = document.querySelector(".floating-cart");
@@ -206,20 +235,23 @@ function createFloatingCart() {
   }
 
   const floatingCart = document.createElement("a");
-  floatingCart.href = "cart.html";
+  floatingCart.href = "cart.html#bag";
   floatingCart.className = "floating-cart";
-  floatingCart.textContent = `CART (${totalQuantity})`;
+  floatingCart.textContent = `BAG (${totalQuantity})`;
 
   document.body.appendChild(floatingCart);
 }
 
 createFloatingCart();
 
-/* ADD TO CART */
+
+/* ADD TO BAG */
 
 const cartButton = document.querySelector(".cart-button");
 
 if (cartButton) {
+  cartButton.textContent = "ADD TO BAG";
+
   cartButton.addEventListener("click", () => {
     if (!currentProduct) {
       alert("상품 정보를 찾을 수 없습니다.");
@@ -259,7 +291,8 @@ if (cartButton) {
   });
 }
 
-/* CART PAGE RENDER */
+
+/* CART / BAG PAGE RENDER */
 
 const cartItems = document.getElementById("cartItems");
 const emptyCart = document.getElementById("emptyCart");
@@ -361,6 +394,7 @@ if (cartItems) {
   });
 }
 
+
 /* GO TO CHECKOUT */
 
 const checkoutButton = document.querySelector(".checkout-button");
@@ -377,6 +411,7 @@ if (checkoutButton) {
     window.location.href = "checkout.html";
   });
 }
+
 
 /* CHECKOUT PAGE */
 
@@ -423,6 +458,7 @@ if (checkoutItems) {
   }
 }
 
+
 /* PLACE ORDER DEMO */
 
 const placeOrderButton = document.getElementById("placeOrderButton");
@@ -443,6 +479,7 @@ if (placeOrderButton) {
     window.location.href = "order-complete.html";
   });
 }
+
 
 /* RELATED PRODUCTS */
 
@@ -472,7 +509,8 @@ if (relatedProducts && typeof products !== "undefined" && currentProduct) {
     .join("");
 }
 
-/* GARDEN STYLE SIDE MENU */
+
+/* SIDE MENU DRAWER */
 
 const menuToggle = document.querySelector(".menu-toggle");
 const navMenu = document.querySelector(".nav");
@@ -515,6 +553,7 @@ function toggleSideMenu() {
 
 if (menuToggle && navMenu) {
   menuToggle.addEventListener("click", (event) => {
+    event.preventDefault();
     event.stopPropagation();
     toggleSideMenu();
   });
@@ -543,6 +582,24 @@ document.addEventListener("keydown", (event) => {
     closeSideMenu();
   }
 });
+
+
+/* FORCE BAG LINK FIX */
+
+document.addEventListener(
+  "click",
+  (event) => {
+    const bagLink = event.target.closest(".cart-success-link");
+
+    if (!bagLink) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    goToBag();
+  },
+  true
+);
+
 
 /* NEWSLETTER DEMO */
 
