@@ -17,6 +17,7 @@ function getCart() {
 function saveCart(cart) {
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
   updateCartCount();
+  createFloatingCart();
 }
 
 function priceToNumber(priceText) {
@@ -52,7 +53,9 @@ updateCartCount();
 /* PRODUCT DETAIL PAGE */
 
 const params = new URLSearchParams(window.location.search);
-const productId = params.get("id");
+const productIdRaw = params.get("id");
+const productId = productIdRaw ? productIdRaw.split("?")[0] : null;
+
 let currentProduct = null;
 
 if (productId && typeof products !== "undefined") {
@@ -107,6 +110,81 @@ sizeButtons.forEach((button) => {
   });
 });
 
+/* ADD TO CART SUCCESS BAR */
+
+function showCartSuccessBar(productName, selectedSize) {
+  const existingBar = document.querySelector(".cart-success-bar");
+
+  if (existingBar) {
+    existingBar.remove();
+  }
+
+  const successBar = document.createElement("div");
+  successBar.className = "cart-success-bar";
+
+  successBar.innerHTML = `
+    <div>
+      <strong>ADDED TO CART</strong>
+      <p>${productName} / ${selectedSize}</p>
+    </div>
+
+    <a href="cart.html">VIEW CART</a>
+  `;
+
+  document.body.appendChild(successBar);
+
+  setTimeout(() => {
+    successBar.classList.add("show");
+  }, 50);
+
+  setTimeout(() => {
+    successBar.classList.remove("show");
+
+    setTimeout(() => {
+      successBar.remove();
+    }, 300);
+  }, 4500);
+}
+
+/* MOBILE FLOATING CART */
+
+function createFloatingCart() {
+  const existingFloatingCart = document.querySelector(".floating-cart");
+
+  if (existingFloatingCart) {
+    existingFloatingCart.remove();
+  }
+
+  const cart = getCart();
+
+  const totalQuantity = cart.reduce((sum, item) => {
+    return sum + item.quantity;
+  }, 0);
+
+  const currentPage = window.location.pathname;
+
+  const hidePages = [
+    "cart.html",
+    "checkout.html",
+    "order-complete.html"
+  ];
+
+  const shouldHide = hidePages.some((page) => currentPage.includes(page));
+
+  if (totalQuantity === 0 || shouldHide) {
+    return;
+  }
+
+  const floatingCart = document.createElement("a");
+  floatingCart.href = "cart.html";
+  floatingCart.className = "floating-cart";
+  floatingCart.textContent = `CART (${totalQuantity})`;
+
+  document.body.appendChild(floatingCart);
+}
+
+createFloatingCart();
+
 /* ADD TO CART */
 
 const cartButton = document.querySelector(".cart-button");
@@ -147,9 +225,7 @@ if (cartButton) {
     }
 
     saveCart(cart);
-
     showCartSuccessBar(currentProduct.name, selectedSize);
-    createFloatingCart();
   });
 }
 
@@ -411,79 +487,4 @@ if (newsletterButton && newsletterEmail) {
     alert("뉴스레터 구독이 완료된 것처럼 처리되었습니다. 현재는 데모 버전입니다.");
     newsletterEmail.value = "";
   });
-}
-
-/* MOBILE FLOATING CART */
-
-function createFloatingCart() {
-  const existingFloatingCart = document.querySelector(".floating-cart");
-
-  if (existingFloatingCart) {
-    existingFloatingCart.remove();
-  }
-
-  const cart = getCart();
-
-  const totalQuantity = cart.reduce((sum, item) => {
-    return sum + item.quantity;
-  }, 0);
-
-  const currentPage = window.location.pathname;
-
-  const hidePages = [
-    "cart.html",
-    "checkout.html",
-    "order-complete.html"
-  ];
-
-  const shouldHide = hidePages.some((page) => currentPage.includes(page));
-
-  if (totalQuantity === 0 || shouldHide) {
-    return;
-  }
-
-  const floatingCart = document.createElement("a");
-  floatingCart.href = "cart.html";
-  floatingCart.className = "floating-cart";
-  floatingCart.textContent = `CART (${totalQuantity})`;
-
-  document.body.appendChild(floatingCart);
-}
-
-createFloatingCart();
-
-/* ADD TO CART SUCCESS BAR */
-
-function showCartSuccessBar(productName, selectedSize) {
-  const existingBar = document.querySelector(".cart-success-bar");
-
-  if (existingBar) {
-    existingBar.remove();
-  }
-
-  const successBar = document.createElement("div");
-  successBar.className = "cart-success-bar";
-
-  successBar.innerHTML = `
-    <div>
-      <strong>ADDED TO CART</strong>
-      <p>${productName} / ${selectedSize}</p>
-    </div>
-
-    <a href="cart.html">VIEW CART</a>
-  `;
-
-  document.body.appendChild(successBar);
-
-  setTimeout(() => {
-    successBar.classList.add("show");
-  }, 50);
-
-  setTimeout(() => {
-    successBar.classList.remove("show");
-
-    setTimeout(() => {
-      successBar.remove();
-    }, 300);
-  }, 4500);
 }
