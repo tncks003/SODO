@@ -2992,4 +2992,253 @@ body.menu-open {
 .collection-product-row:hover h3,
 .journal-row:hover h2 {
   font-style: normal !important;
+}/* =========================================================
+   FINAL MOBILE CHECK FIX
+========================================================= */
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* 모바일에서 터치 영역, 글자, 여백 최종 정리 */
+@media (max-width: 760px) {
+  body {
+    font-size: 14px;
+  }
+
+  .sodo-top-header {
+    height: 62px;
+    padding: 0 16px;
+  }
+
+  .sodo-top-header .menu-toggle {
+    min-width: 54px;
+    height: 44px;
+    text-align: left;
+  }
+
+  .header-center-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 17px;
+    letter-spacing: 0.2em;
+  }
+
+  .header-actions {
+    gap: 10px;
+    font-size: 10px;
+  }
+
+  .header-actions a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .header-actions a:first-child {
+    display: none;
+  }
+
+  /* 모바일 메뉴창 */
+  .sodo-top-header .nav {
+    width: 82vw !important;
+    max-width: 82vw !important;
+    left: -86vw !important;
+    padding: 92px 24px 32px !important;
+  }
+
+  .sodo-top-header .nav.open {
+    left: 0 !important;
+  }
+
+  .sodo-top-header .nav a {
+    padding: 18px 0;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+  }
+
+  .menu-backdrop {
+    z-index: 1000 !important;
+  }
+
+  .sodo-top-header .nav {
+    z-index: 1300 !important;
+  }
+
+  .sodo-top-header .menu-toggle {
+    z-index: 1400 !important;
+  }
+
+  /* 메인 화면 */
+  .photo-hero {
+    min-height: 92vh;
+    padding: 92px 18px 42px;
+  }
+
+  .photo-hero-content h1 {
+    font-size: 50px;
+    letter-spacing: 0.14em;
+  }
+
+  .photo-hero-content p,
+  .photo-hero-content span {
+    font-size: 10px;
+    line-height: 1.6;
+  }
+
+  .photo-enter-button {
+    bottom: 34px;
+    padding: 12px 24px;
+    font-size: 10px;
+  }
+
+  .photo-info-section,
+  .photo-selected-section,
+  .photo-bottom-section {
+    padding: 72px 18px;
+  }
+
+  .photo-info-box {
+    padding: 24px;
+  }
+
+  .photo-info-box h2 {
+    font-size: 28px;
+  }
+
+  .photo-selected-row {
+    grid-template-columns: 36px 1fr;
+    padding: 20px 16px;
+  }
+
+  .photo-selected-row h2 {
+    font-size: 24px;
+  }
+
+  .photo-selected-row p {
+    grid-column: 2;
+    text-align: left;
+  }
+
+  /* 공통 페이지 */
+  .page,
+  .product-page {
+    padding: 88px 18px 56px;
+  }
+
+  .page-title h1,
+  .collection-hero h1,
+  .journal-hero h1,
+  .account-hero h1 {
+    font-size: 42px;
+    line-height: 1;
+  }
+
+  /* SHOP */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-info h2 {
+    font-size: 15px;
+  }
+
+  .shop-category-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+  }
+
+  .shop-category-tabs button {
+    flex-shrink: 0;
+  }
+
+  /* 상품 상세 */
+  .product-detail-page .product-detail {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .product-detail-page .product-detail-info {
+    position: static;
+  }
+
+  .product-detail-page #productName {
+    font-size: 34px;
+  }
+
+  .product-detail-page .product-detail-image {
+    aspect-ratio: 3 / 4;
+  }
+
+  .product-image-note {
+    grid-template-columns: 1fr;
+  }
+
+  .product-bottom-statement {
+    margin: 64px -18px 64px;
+    padding: 64px 18px;
+  }
+
+  .product-bottom-statement h2 {
+    font-size: 36px;
+  }
+
+  .related-grid,
+  .product-detail-page .related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 장바구니 */
+  .cart-layout,
+  .checkout-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    grid-template-columns: 100px 1fr;
+    gap: 16px;
+  }
+
+  .cart-item-info h2 {
+    font-size: 17px;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  /* 푸터 */
+  .footer {
+    padding: 52px 18px 24px;
+  }
+
+  .footer-inner,
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  .newsletter-form button {
+    height: 44px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  /* 모바일 호버 효과 제거 */
+  .sodo-top-header .nav a:hover,
+  .photo-selected-row:hover h2,
+  .collection-product-row:hover h3,
+  .journal-row:hover h2 {
+    font-style: normal !important;
+    opacity: 1 !important;
+    padding-left: 0 !important;
+  }
 }
