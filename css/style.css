@@ -2843,4 +2843,112 @@ body.menu-open {
     flex-direction: column;
     gap: 10px;
   }
+}/* =========================================================
+   GARDEN STYLE MENU DRAWER UPGRADE
+========================================================= */
+
+.menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.36);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.28s ease;
+  z-index: 105;
+}
+
+.menu-backdrop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sodo-top-header .nav {
+  position: fixed !important;
+  top: 0;
+  left: -390px;
+  width: 340px;
+  max-width: 84vw;
+  height: 100vh;
+  background: #f4f1ec;
+  color: #111;
+  padding: 104px 30px 34px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  border-right: 1px solid #111;
+  transition: left 0.32s ease;
+  z-index: 130;
+}
+
+.sodo-top-header .nav.open {
+  left: 0;
+}
+
+.sodo-top-header .nav a {
+  width: 100%;
+  padding: 17px 0;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.18);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  line-height: 1;
+}
+
+.sodo-top-header .nav a:first-child::before {
+  content: "SHOP";
+  display: block;
+  margin-bottom: 18px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: #777;
+}
+
+.sodo-top-header .nav a:hover {
+  font-style: italic;
+}
+
+.sodo-top-header .menu-toggle {
+  position: relative;
+  z-index: 150;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+/* PRODUCT PAGE MENU VISIBILITY */
+
+.product-detail-page .sodo-top-header,
+.product-page .sodo-top-header {
+  position: fixed;
+}
+
+.product-detail-page .menu-toggle,
+.product-page .menu-toggle {
+  display: block !important;
+}
+
+/* MOBILE MENU DRAWER */
+
+@media (max-width: 760px) {
+  .menu-backdrop {
+    background: rgba(0, 0, 0, 0.44);
+  }
+
+  .sodo-top-header .nav {
+    left: -88vw;
+    width: 82vw;
+    max-width: 82vw;
+    padding: 94px 24px 32px;
+  }
+
+  .sodo-top-header .nav.open {
+    left: 0;
+  }
+
+  .sodo-top-header .nav a {
+    padding: 18px 0;
+    font-size: 12px;
+  }
 }
