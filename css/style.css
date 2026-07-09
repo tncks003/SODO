@@ -3303,4 +3303,12 @@ body {
     min-height: 44px !important;
     white-space: nowrap !important;
   }
+}/* REMOVE SHOP BUTTON FROM HEADER ACTIONS */
+
+.header-actions a:first-child {
+  display: none !important;
+}
+
+.header-actions {
+  justify-content: flex-end !important;
 }
