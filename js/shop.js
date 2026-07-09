@@ -4,10 +4,34 @@ const productSort = document.getElementById("productSort");
 const productCount = document.getElementById("productCount");
 const categoryButtons = document.querySelectorAll(".shop-category-tabs button");
 
-let selectedCategory = "ALL";
+const allowedCategories = ["ALL", "TOP", "BOTTOM", "BAG", "ACC", "OBJECT"];
+const urlParams = new URLSearchParams(window.location.search);
+const categoryFromUrl = urlParams.get("category");
+
+let selectedCategory = allowedCategories.includes(categoryFromUrl)
+  ? categoryFromUrl
+  : "ALL";
 
 function getProductPriceNumber(priceText) {
   return Number(String(priceText).replace(/[^\d]/g, ""));
+}
+
+function syncCategoryButtons() {
+  categoryButtons.forEach((button) => {
+    if (button.dataset.category === selectedCategory) {
+      button.classList.add("active");
+    } else {
+      button.classList.remove("active");
+    }
+  });
+}
+
+function updateCategoryUrl() {
+  if (selectedCategory === "ALL") {
+    window.history.replaceState(null, "", "shop.html");
+  } else {
+    window.history.replaceState(null, "", `shop.html?category=${selectedCategory}`);
+  }
 }
 
 function renderShopProducts() {
@@ -80,15 +104,14 @@ function renderShopProducts() {
 
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    categoryButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
-
     selectedCategory = button.dataset.category;
 
     if (productSearch) {
       productSearch.value = "";
     }
 
+    syncCategoryButtons();
+    updateCategoryUrl();
     renderShopProducts();
   });
 });
@@ -101,4 +124,5 @@ if (productSort) {
   productSort.addEventListener("change", renderShopProducts);
 }
 
+syncCategoryButtons();
 renderShopProducts();

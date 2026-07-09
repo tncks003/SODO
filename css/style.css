@@ -4131,4 +4131,70 @@ body {
   .order-complete-statement h2 {
     font-size: 38px;
   }
+}/* =========================================================
+   GARDEN EXPRESS STYLE DRAWER MENU
+========================================================= */
+
+.sodo-top-header .nav a:first-child::before {
+  content: none !important;
+  display: none !important;
+}
+
+.sodo-drawer-menu {
+  overflow-y: auto;
+}
+
+.sodo-drawer-menu .drawer-group {
+  width: 100%;
+  margin-bottom: 34px;
+}
+
+.sodo-drawer-menu .drawer-title {
+  margin-bottom: 14px;
+  font-size: var(--font-xs, 11px);
+  letter-spacing: var(--letter-label, 0.18em);
+  color: #777;
+}
+
+.sodo-top-header .sodo-drawer-menu a {
+  width: 100%;
+  display: block;
+  padding: 8px 0 !important;
+  border-bottom: none !important;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+}
+
+.sodo-top-header .sodo-drawer-menu a:hover {
+  font-style: normal !important;
+  opacity: 0.55;
+  padding-left: 6px !important;
+}
+
+.drawer-account {
+  margin-top: 18px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(17, 17, 17, 0.22);
+}
+
+.drawer-account a {
+  font-size: 12px !important;
+  color: #555;
+}
+
+/* 모바일 메뉴 안쪽 여백 정리 */
+@media (max-width: 760px) {
+  .sodo-drawer-menu .drawer-group {
+    margin-bottom: 30px;
+  }
+
+  .sodo-top-header .sodo-drawer-menu a {
+    padding: 9px 0 !important;
+    font-size: 12px;
+  }
+
+  .drawer-account {
+    padding-top: 22px;
+  }
 }
