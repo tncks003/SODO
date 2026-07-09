@@ -148,7 +148,8 @@ if (cartButton) {
 
     saveCart(cart);
 
-    alert(`${currentProduct.name} / ${selectedSize} 사이즈가 장바구니에 담겼습니다.`);
+    showCartSuccessBar(currentProduct.name, selectedSize);
+    createFloatingCart();
   });
 }
 
@@ -172,6 +173,7 @@ function renderCart() {
     if (cartSummary) cartSummary.style.display = "none";
 
     updateCartCount();
+    createFloatingCart();
     return;
   }
 
@@ -215,6 +217,7 @@ function renderCart() {
   if (cartTotal) cartTotal.textContent = formatPrice(subtotal);
 
   updateCartCount();
+  createFloatingCart();
 }
 
 if (cartItems) {
@@ -329,36 +332,13 @@ if (placeOrderButton) {
 
     localStorage.removeItem(CART_KEY);
     updateCartCount();
+    createFloatingCart();
 
     window.location.href = "order-complete.html";
   });
-}/* MOBILE MENU */
+}
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector(".nav");
-
-if (menuToggle && navMenu) {
-  menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-    document.body.classList.toggle("menu-open");
-
-    if (navMenu.classList.contains("open")) {
-      menuToggle.textContent = "CLOSE";
-    } else {
-      menuToggle.textContent = "MENU";
-    }
-  });
-
-  const navLinks = navMenu.querySelectorAll("a");
-
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      navMenu.classList.remove("open");
-      document.body.classList.remove("menu-open");
-      menuToggle.textContent = "MENU";
-    });
-  });
-}/* RELATED PRODUCTS */
+/* RELATED PRODUCTS */
 
 const relatedProducts = document.getElementById("relatedProducts");
 
@@ -384,7 +364,37 @@ if (relatedProducts && typeof products !== "undefined" && currentProduct) {
       `;
     })
     .join("");
-}/* NEWSLETTER DEMO */
+}
+
+/* MOBILE MENU */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav");
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+
+    if (navMenu.classList.contains("open")) {
+      menuToggle.textContent = "CLOSE";
+    } else {
+      menuToggle.textContent = "MENU";
+    }
+  });
+
+  const navLinks = navMenu.querySelectorAll("a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      menuToggle.textContent = "MENU";
+    });
+  });
+}
+
+/* NEWSLETTER DEMO */
 
 const newsletterButton = document.getElementById("newsletterButton");
 const newsletterEmail = document.getElementById("newsletterEmail");
@@ -401,4 +411,79 @@ if (newsletterButton && newsletterEmail) {
     alert("뉴스레터 구독이 완료된 것처럼 처리되었습니다. 현재는 데모 버전입니다.");
     newsletterEmail.value = "";
   });
+}
+
+/* MOBILE FLOATING CART */
+
+function createFloatingCart() {
+  const existingFloatingCart = document.querySelector(".floating-cart");
+
+  if (existingFloatingCart) {
+    existingFloatingCart.remove();
+  }
+
+  const cart = getCart();
+
+  const totalQuantity = cart.reduce((sum, item) => {
+    return sum + item.quantity;
+  }, 0);
+
+  const currentPage = window.location.pathname;
+
+  const hidePages = [
+    "cart.html",
+    "checkout.html",
+    "order-complete.html"
+  ];
+
+  const shouldHide = hidePages.some((page) => currentPage.includes(page));
+
+  if (totalQuantity === 0 || shouldHide) {
+    return;
+  }
+
+  const floatingCart = document.createElement("a");
+  floatingCart.href = "cart.html";
+  floatingCart.className = "floating-cart";
+  floatingCart.textContent = `CART (${totalQuantity})`;
+
+  document.body.appendChild(floatingCart);
+}
+
+createFloatingCart();
+
+/* ADD TO CART SUCCESS BAR */
+
+function showCartSuccessBar(productName, selectedSize) {
+  const existingBar = document.querySelector(".cart-success-bar");
+
+  if (existingBar) {
+    existingBar.remove();
+  }
+
+  const successBar = document.createElement("div");
+  successBar.className = "cart-success-bar";
+
+  successBar.innerHTML = `
+    <div>
+      <strong>ADDED TO CART</strong>
+      <p>${productName} / ${selectedSize}</p>
+    </div>
+
+    <a href="cart.html">VIEW CART</a>
+  `;
+
+  document.body.appendChild(successBar);
+
+  setTimeout(() => {
+    successBar.classList.add("show");
+  }, 50);
+
+  setTimeout(() => {
+    successBar.classList.remove("show");
+
+    setTimeout(() => {
+      successBar.remove();
+    }, 300);
+  }, 4500);
 }
