@@ -3241,4 +3241,66 @@ body {
     opacity: 1 !important;
     padding-left: 0 !important;
   }
+}/* =========================================================
+   FIX MOBILE HEADER OVERLAP
+========================================================= */
+
+@media (max-width: 760px) {
+  .sodo-top-header {
+    display: grid !important;
+    grid-template-columns: 72px 1fr 72px !important;
+    align-items: center !important;
+    height: 62px !important;
+    padding: 0 14px !important;
+  }
+
+  .sodo-top-header .menu-toggle {
+    grid-column: 1 !important;
+    justify-self: start !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: 44px !important;
+    padding: 0 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.14em !important;
+    z-index: 1400 !important;
+  }
+
+  .header-center-logo {
+    position: static !important;
+    grid-column: 2 !important;
+    justify-self: center !important;
+    transform: none !important;
+    font-size: 17px !important;
+    letter-spacing: 0.18em !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+    z-index: 1300 !important;
+  }
+
+  .header-actions {
+    grid-column: 3 !important;
+    justify-self: end !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    width: 72px !important;
+    gap: 0 !important;
+    font-size: 10px !important;
+    letter-spacing: 0.12em !important;
+    z-index: 1400 !important;
+  }
+
+  .header-actions a:first-child {
+    display: none !important;
+  }
+
+  .header-actions .cart-action,
+  .header-actions a[href="cart.html"] {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    min-height: 44px !important;
+    white-space: nowrap !important;
+  }
 }
