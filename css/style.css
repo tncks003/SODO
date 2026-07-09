@@ -512,4 +512,80 @@ button {
   .product-detail-image {
     min-height: 460px;
   }
+}/* PRODUCT IMAGE UPDATE */
+
+.product-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.product-image img[src=""] {
+  display: none;
+}
+
+.product-image img:not([src]),
+.product-image img[src=""] {
+  display: none;
+}
+
+.product-image img + .product-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.product-image img[src]:not([src=""]) + .product-placeholder {
+  display: flex;
+}
+
+.product-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #d8d2c7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #918879;
+  font-size: 28px;
+  letter-spacing: 4px;
+}
+
+.product-detail-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-detail-image img {
+  width: 100%;
+  height: 100%;
+  min-height: 680px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-detail-image img[src=""] {
+  display: none;
+}
+
+#productImageFallback {
+  display: block;
+}
+
+.product-detail-image img:not([style*="display: none"]) + #productImageFallback {
+  display: none;
+}
+
+.size-list button.active {
+  background: #111;
+  color: #fff;
 }

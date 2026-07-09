@@ -25,36 +25,35 @@
     <section class="product-detail">
 
       <div class="product-detail-image">
-        <span>SODO</span>
+        <img id="productImage" src="" alt="" />
+        <span id="productImageFallback">SODO</span>
       </div>
 
       <div class="product-detail-info">
-        <p class="category">SODO ESSENTIALS</p>
-        <h1>Essential Logo T-Shirt</h1>
-        <p class="price">₩75,000</p>
+        <p class="category" id="productCategory">SODO ESSENTIALS</p>
+        <h1 id="productName">Essential Logo T-Shirt</h1>
+        <p class="price" id="productPrice">₩75,000</p>
 
-        <p class="description">
+        <p class="description" id="productDescription">
           일상에서 편하게 입을 수 있는 SODO의 기본 티셔츠입니다.
-          여유 있는 실루엣과 부드러운 코튼 소재를 사용해 단독으로 입거나
-          이너로 활용하기 좋습니다.
         </p>
 
         <div class="option-box">
           <p>SIZE</p>
           <div class="size-list">
-            <button>S</button>
-            <button>M</button>
-            <button>L</button>
-            <button>XL</button>
+            <button type="button">S</button>
+            <button type="button">M</button>
+            <button type="button">L</button>
+            <button type="button">XL</button>
           </div>
         </div>
 
-        <button class="cart-button">ADD TO CART</button>
+        <button class="cart-button" type="button">ADD TO CART</button>
 
         <div class="product-notice">
-          <p>Material: Cotton 100%</p>
-          <p>Color: White / Black / Charcoal</p>
-          <p>Made in Korea</p>
+          <p id="productMaterial">Material: Cotton 100%</p>
+          <p id="productColor">Color: White / Black / Charcoal</p>
+          <p id="productMade">Made in Korea</p>
         </div>
       </div>
 
@@ -65,6 +64,7 @@
     <p>© <span id="year"></span> SODO. All rights reserved.</p>
   </footer>
 
+  <script src="js/products.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
