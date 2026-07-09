@@ -332,4 +332,30 @@ if (placeOrderButton) {
 
     window.location.href = "order-complete.html";
   });
+}/* MOBILE MENU */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navMenu = document.querySelector(".nav");
+
+if (menuToggle && navMenu) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("open");
+    document.body.classList.toggle("menu-open");
+
+    if (navMenu.classList.contains("open")) {
+      menuToggle.textContent = "CLOSE";
+    } else {
+      menuToggle.textContent = "MENU";
+    }
+  });
+
+  const navLinks = navMenu.querySelectorAll("a");
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      document.body.classList.remove("menu-open");
+      menuToggle.textContent = "MENU";
+    });
+  });
 }

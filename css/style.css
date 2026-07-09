@@ -1020,4 +1020,65 @@ button {
   .checkout-summary {
     position: static;
   }
+}/* MOBILE MENU */
+
+.menu-toggle {
+  display: none;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  z-index: 50;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    height: 68px;
+    padding: 0 20px;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 76%;
+    max-width: 360px;
+    height: 100vh;
+    background: #111;
+    color: #fff;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 26px;
+    padding: 96px 34px 34px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition: right 0.3s ease;
+    z-index: 40;
+  }
+
+  .nav.open {
+    right: 0;
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .site-header.transparent .nav {
+    background: #111;
+    color: #fff;
+  }
+
+  .site-header.transparent .menu-toggle {
+    color: #fff;
+  }
 }
